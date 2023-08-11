@@ -43,8 +43,8 @@ foreach ($username in $AccountListFile) {
 		Enabled 				= $true
 		CannotChangePassword	= $true
 		PasswordNeverExpires	= $true
-		OtherAttributes			= @{'title' = 'BCP Service Account'
-									'description' = 'BCP Service Account'}
+		OtherAttributes			= @{'title' 		= ''
+						    'description' 	= ''}
 	}
 	New-ADUser @newuser
 }
