@@ -19,10 +19,12 @@ Function Get-RandomPassword
             Uppercase   = (97..122) | Get-Random -Count 10 | % {[char]$_}
             Lowercase   = (65..90)  | Get-Random -Count 10 | % {[char]$_}
             Numeric     = (48..57)  | Get-Random -Count 10 | % {[char]$_}
+            SpecialChar = (33..47)+(58..64)+(91..96)+(123..126List of users should just be in a text file with new accounts on new lines.) | Get-Random -Count 10 | % {[char]$_}
+
     }
  
     # Frame Random Password from given character set
-    $StringSet = $CharacterSet.Uppercase + $CharacterSet.Lowercase + $CharacterSet.Numeric
+    $StringSet = $CharacterSet.Uppercase + $CharacterSet.Lowercase + $CharacterSet.Numeric + $CharacterSet.SpecialChar
      -join(Get-Random -Count $PasswordLength -InputObject $StringSet)
 }
 
